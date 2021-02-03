@@ -1,10 +1,5 @@
-package readability;
-
-import javax.swing.plaf.IconUIResource;
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.PseudoColumnUsage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +10,6 @@ public class Readability {
     public static void main(String[] args) {
         List<String> text = new ArrayList<>();
         try {
-            //Scanner sc = new Scanner(new File(args[0]));
             Scanner sc = new Scanner(new File("C:\\Users\\mihai\\Downloads\\dataset_91069.txt"));
             while (sc.hasNext()) {
                 text.add(sc.next());
