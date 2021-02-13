@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     public static  void showMe(){
-        System.out.println("Программа для определения сложности текста.\n");
+        System.out.println("Program for determining the complexity of the text.\n");
     }
 
     public static void showMenu(int words, int sentences, int characters, int syl, int polysyl) {
