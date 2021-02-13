@@ -1,29 +1,31 @@
 public class MethodsOfCount {
 
+    static String format = "\n%s %.2f%s%s%s";
+
     public static void countingARI(int words, int sentences, int characters) {
         double index = 4.71 * ((double) characters / words) + 0.5 * ((double) words / sentences)
                 - 21.43;
         String age = chooseAge(index);
-        System.out.println("Automated Readability Index:" + index + " (about " + age + "-year-olds).");
+        System.out.printf(format, "Automated Readability Index:", index, " (about ", age, "-year-olds).");
     }
 
     public static void countingFK(int words, int sentences, int syllables) {
         double index = 0.39 * ((double) words / sentences) + 11.8 * ((double) syllables / words)
                 - 15.59;
         String age = chooseAge(index);
-        System.out.println("Flesch–Kincaid readability tests:" + index + " (about " + age + "-year-olds).");
+        System.out.printf(format, "Flesch–Kincaid readability tests:", index, " (about ", age, "-year-olds).");
     }
 
     public static void countingSMOG(int sentences, int polysyllables) {
         double index = 1.043 * Math.sqrt((double) polysyllables * 30 / sentences) + 3.1291;
         String age = chooseAge(index);
-        System.out.println("Simple Measure of Gobbledygook:" + index + " (about " + age + "-year-olds).");
+        System.out.printf(format, "Simple Measure of Gobbledygook:", index, " (about ", age, "-year-olds).");
     }
 
     public static void countingCL(int sentences, int words, int characters) {
         double index = 0.0588 * (double) characters / words * 100 - 0.296 * (double) sentences / words * 100 - 15.8;
         String age = chooseAge(index);
-        System.out.println("Coleman–Liau index:" + index + " (about " + age + "-year-olds).");
+        System.out.printf(format, "Coleman–Liau index:", index, " (about ", age, "-year-olds).");
     }
 
     public static void countingAverage(int words, int sentences, int characters, int syllables, int polysyllables) {
@@ -36,7 +38,7 @@ public class MethodsOfCount {
         double index4 = 0.0588 * (double) characters / words * 100 - 0.296 * (double) sentences / words * 100 - 15.8;
         double age4 = Double.parseDouble(chooseAge(index4));
         double avg = (age1 + age2 + age3 + age4) / 4;
-        System.out.printf("\n%s%.2f%s", "This text should be understood in average by ", avg, "-year-olds.");
+        System.out.printf("\n\n%s%.0f%s", "This text should be understood in average by ", avg, "-year-olds.");
     }
 
     public static String chooseAge(double index) {
